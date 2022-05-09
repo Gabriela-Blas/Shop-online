@@ -25,7 +25,7 @@ const Login = () => {
                 <div className='h-full'>
                     <Marquee className='h-full w-full flex-shrink-0' pauseOnHover speed={30} gradient={false}>
                         {product.map((obje, c) =>
-                            <img key={c} src={obje}
+                            <img key={c} src={obje} alt='product'
                             className={`h-full w-full object-contain odd:scale-[0.85] ${c === 2 ? "-rotate-12" : "odd:rotate-12"}`} />)}
                     </Marquee>
                 </div>
