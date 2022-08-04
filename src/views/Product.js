@@ -16,7 +16,19 @@ const description = [
 
 function Product() {
     const [active, setActive] = useState(description[0]);
+    const [quantity, setQuantity] = useState(0)
+
     let navigate = useNavigate();
+
+    const handlerAdd = () => {
+        setQuantity( quantity + 1 )
+    }
+
+    const handlerRemove = () => {
+        if (quantity > 0) {
+            setQuantity( quantity - 1 )  
+        }
+    }
 
     return (
         /* detail product */
@@ -79,9 +91,9 @@ function Product() {
                 <div>
                     <div className="flex justify-between">
                         <div className="bg-zinc-200 flex justify-between w-1/4 rounded-full items-center p-2">
-                            <button className="bg-zinc-900 rounded-full h-7 w-7 text-white font-bold">-</button>
-                            <p>0</p>
-                            <button className="bg-zinc-900 rounded-full h-7 w-7 text-white font-bold">+</button>
+                            <button onClick={handlerRemove} className="bg-zinc-900 rounded-full h-7 w-7 text-white font-bold">-</button>
+                            <p>{ quantity }</p>
+                            <button onClick={handlerAdd} className="bg-zinc-900 rounded-full h-7 w-7 text-white font-bold">+</button>
                         </div>
 
                         <div>
